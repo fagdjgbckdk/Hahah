@@ -1,5 +1,5 @@
 local p=game.Players.LocalPlayer c=p.Character or p.CharacterAdded:Wait() local hrp=c:WaitForChild("HumanoidRootPart")
-local g=Instance.new("ScreenGui")g.Parent=p:WaitForChild("PlayerGui") -- ✅ ঠিক Parent
+local g=Instance.new("ScreenGui")g.Parent=p:WaitForChild("PlayerGui")
 local f=Instance.new("Frame")f.Size=UDim2.new(0,220,0,150)f.Position=UDim2.new(0,350,0,100)
 f.BackgroundColor3=Color3.fromRGB(30,30,30)f.Parent=g
 
@@ -8,7 +8,7 @@ local bv=Instance.new("BodyVelocity",hrp)bv.MaxForce=Vector3.one*1e9 bv.P=1250 b
 
 for i=1,3 do local b=Instance.new("TextButton")b.Size=UDim2.new(0,200,0,30)
 b.Position=UDim2.new(0,10,0,10+(i-1)*40)b.Text=names[i]..": OFF"b.BackgroundColor3=Color3.fromRGB(100,0,0)
-b.TextColor3=Color3.new(1,1,1)b.Parent=f -- ✅ Text color add
+b.TextColor3=Color3.new(1,1,1)b.Parent=f
 b.MouseButton1Click:Connect(function()
 sts[i]=not sts[i]b.Text=names[i]..": "..(sts[i]and"ON"or"OFF")
 b.BackgroundColor3=sts[i]and Color3.fromRGB(0,150,0)or Color3.fromRGB(100,0,0)
